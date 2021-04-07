@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+
+$Dark-cyan: hsl(185, 75%, 39%);
+$Very-dark-desaturated-blue: hsl(229, 23%, 23%);
+$Dark-grayish-blue: hsl(227, 10%, 46%);
+
+$Dark-gray: hsl(0, 0%, 59%);
+
+$font-size:18px;
+
+*,*::before,*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    
+    background-color: $Dark-cyan;
+    background-image: url("images/bg-pattern-top.svg"),url("images/bg-pattern-bottom.svg");
+    background-repeat: no-repeat , no-repeat;
+    background-position: -35vh -25vw, 100vh 30vw;
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+}
+
+.card{
+    position: absolute;
+    height: 500px;
+    width: 400px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-image:linear-gradient(180deg, rgba(255, 255, 255, 0) 35%, rgba(255,255,255,1) 35%), url("images/bg-pattern-card.svg");
+    border-radius: 15px;
+
+    &-image{
+        height: 100px;
+        width: 100px;
+        border-radius: 50%;
+        border: 5px solid white;
+        position: absolute;
+        top: 25%;
+        left:50%;
+        transform: translateX(-50%);
+    }
+
+    &-info{
+        display: flex;
+        height: 250px;
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        &-name{
+            margin-top: 20px;
+            font-family: "kumbh sans";
+            font: $font-size;
+            font-weight: 700;
+        }
+
+        &-location{
+            margin-top: 15px ;
+            font-weight: 400;
+            color: $Dark-gray;
+        }
+
+        &-stats{
+            height: 200px;
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            text-align: center;
+            margin-top: 20px;
+        }
+    }
+}
+
+hr{
+    height: 2.5px;
+    width: 100%;
+    margin-top: 30px;
+    background-color: $Dark-gray;
+    
+}
+
+.stat{
+    font-family: "kumbh sans";
+    font-size: $font-size;
+    font-weight: 400;
+    color:$Dark-gray;
+    margin-top: 10px;
+    &-nr{
+        font-family: "kumbh sans";
+        font-weight: 700;
+        font-size: 25px;
+        margin-top: 10px;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .card{
+        width: 80%;
+        margin:0 auto; 
+    }
+}
